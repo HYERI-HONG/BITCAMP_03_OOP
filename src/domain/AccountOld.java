@@ -3,7 +3,7 @@ package domain;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
-public class Account {
+public class AccountOld {
 	public final static String BANK_NAME = "비트뱅크";
 	public final static String ACCOUNT_TYPE = "기본통장";
 	public final static String WITHDRAW_SUCCESS = "출금성공";
@@ -12,7 +12,7 @@ public class Account {
 	public final static String DEPOSIT_FAIL = "적합한 입력값이 아님";
 	protected int money;
 	protected String uid, accountType, createDate, name, pass, accountNo, balance;
-	public Account(String name, String uid, String pass) {
+	public AccountOld(String name, String uid, String pass) {
 		setAccountType();
 		setAccountNo();
 		setDate();

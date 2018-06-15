@@ -28,7 +28,7 @@ enum Butt2{
 	DEPOSIT,
 	WITHDRAWAL
 }
-public class AccountMain {
+public class AccountMainOld {
 	public static void main(String[] args) {
 		Butt2[] buttons= {
 			Butt2.EXIT,
@@ -37,7 +37,7 @@ public class AccountMain {
 			Butt2.DEPOSIT,
 			Butt2.WITHDRAWAL
 		};
-		Account acc = null;
+		AccountOld acc = null;
 		
 		while(true) {
 			Butt2 select = (Butt2)JOptionPane.showInputDialog(null,"비트뱅크\n통장타입을 선택하세요.","0 : 종료\n1 : 기본 통장\n2 : 마이너스 통장\n3 : 입금\n4 : 출금",
@@ -46,18 +46,18 @@ public class AccountMain {
 				case EXIT :
 					return;
 				case BASICACCOUNT :
-					acc = new Account(JOptionPane.showInputDialog("이름을 입력하세요 :"),
+					acc = new AccountOld(JOptionPane.showInputDialog("이름을 입력하세요 :"),
 							JOptionPane.showInputDialog("뱅킹에 사용할 ID를 입력하세요 :"),
 							JOptionPane.showInputDialog("뱅킹에 사용할 비밀번호를 입력하세요 :"));
 					acc.setMoney(Integer.parseInt(JOptionPane.showInputDialog("입급하시겠습니까?")));
 					JOptionPane.showMessageDialog(null,acc.toString());
 					break; 
 				case MINUSACCOUNT :
-					acc = new MinusAccount(JOptionPane.showInputDialog("이름을 입력하세요 :"),
+					acc = new MinusAccountOld(JOptionPane.showInputDialog("이름을 입력하세요 :"),
 							JOptionPane.showInputDialog("뱅킹에 사용할 ID를 입력하세요 :"),
 							JOptionPane.showInputDialog("뱅킹에 사용할 비밀번호를 입력하세요 :"));
-					((MinusAccount) acc).setLimit(Integer.parseInt(JOptionPane.showInputDialog("대출 한도를 입력하세요 :")));
-					((MinusAccount) acc).setWithdrawal(Integer.parseInt(JOptionPane.showInputDialog("대출하시겠습니까?")));
+					((MinusAccountOld) acc).setLimit(Integer.parseInt(JOptionPane.showInputDialog("대출 한도를 입력하세요 :")));
+					((MinusAccountOld) acc).setWithdrawal(Integer.parseInt(JOptionPane.showInputDialog("대출하시겠습니까?")));
 					JOptionPane.showMessageDialog(null,acc.toString());
 					break;
 				case DEPOSIT :
@@ -68,7 +68,7 @@ public class AccountMain {
 			 	if(acc. getAccountType().equals("기본통장")) {
 						acc.setWithdrawal(Integer.parseInt(JOptionPane.showInputDialog("출금 금액")));
 				}else {
-					((MinusAccount) acc).setWithdrawal(Integer.parseInt(JOptionPane.showInputDialog("대출 금액")));
+					((MinusAccountOld) acc).setWithdrawal(Integer.parseInt(JOptionPane.showInputDialog("대출 금액")));
 				}	
 				JOptionPane.showMessageDialog(null,acc.getBalance());
 				break;

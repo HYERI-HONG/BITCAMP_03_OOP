@@ -1,10 +1,10 @@
 package domain;
 
-public class MinusAccount extends Account {
+public class MinusAccountNew extends AccountNew {
 	public final static String ACCOUNT_TYPE="마이너스통장";
 	public int limit;
 	
-	public MinusAccount(String name, String uid, String pass) {
+	public MinusAccountNew(String name, String uid, String pass) {
 		super(name,uid,pass);
 		setAccountType();
 	}

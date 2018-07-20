@@ -1,13 +1,15 @@
 package service;
-import domain.AccountNew;
+import domain.AccountBean;
 public interface AccountService {
-	public AccountNew createAccountNew(String name, String uid, String pass);
-	public void addList(AccountNew account);
-	public AccountNew[] list();
+	public void createAccount(AccountBean account);
+	public void addList(AccountBean account);
+	public AccountBean[] list();
 	public  int deposit(String money, int restMoney);
 	public  int withdrawal(String money);
 	public String createAccountNum(String random);
 	public String createRandom(int start, int end);
 	public String createDate();
 	public String showResult();
+	public AccountBean findById(AccountBean account);
+	
 }
